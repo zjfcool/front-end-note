@@ -16,4 +16,4 @@ let obj = {
     name:"obj"
 }
 hello()
-hello.apply(obj)
+hello.myApply(obj)

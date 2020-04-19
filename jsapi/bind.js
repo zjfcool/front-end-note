@@ -12,4 +12,4 @@ let obj = {
 function hello (){
     console.log(this.name)
 }
-hello.bind(obj)()
+hello.myBind(obj)()
