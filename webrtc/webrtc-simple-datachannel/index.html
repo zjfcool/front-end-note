@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webrtc-simple-datachannel</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <button @click="connectHandle" :disabled="connected">连接</button>
+            <button @click="disconnectHandle" :disabled="!connected">断开连接</button>
+        </div>
+        <div>
+            <input :disabled="!connected" v-model="message" type="text">
+            <button :disabled="!connected" @click="sendMessage">发送</button>
+        </div>
+        <ul class="message-list">
+            <li v-for="(item,index) in messageList" :key="index">{{item}}</li>
+        </ul>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
