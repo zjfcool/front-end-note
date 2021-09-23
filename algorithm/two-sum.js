@@ -11,8 +11,20 @@ function twoNum(nums, target) {
             if (nums[j] === b) ret.push([i, j])
         }
     }
-    return ret;
+    return ret[0];
 }
 console.log(twoNum([2, 7, 11, 15], 9))
 console.log(twoNum([3, 2, 4], 6))
 console.log(twoNum([3, 3, 2, 4, 3], 6))
+function twoNum2(nums, target) {
+    let obj = {}
+    for (let i = 0; i < nums.length; i++) {
+        let a = nums[i], b = target - a;
+        if (obj[b] >= 0) return [obj[b], i]
+        obj[a] = i;
+    }
+    return [];
+}
+console.log(twoNum2([2, 7, 11, 15], 9))
+console.log(twoNum2([3, 2, 4], 6))
+console.log(twoNum2([3, 3, 2, 4, 3], 6))
